@@ -70,7 +70,11 @@ rdaw: rda work property
 lcsh: library of congress subject heading
 #+END_NOTES
 
-* Label
+* Items and Labels
+Items are the things/concepts described. 
+
+Anyone can create an item.
+
 #+NAME:  fig:label.png
 #+ATTR_HTML: :height 100%
 [[./images/label.png]]
@@ -104,14 +108,39 @@ lcsh: library of congress subject heading
 #+ATTR_HTML: :height 100%
 [[./images/aliasuse.png]]
 
+* Statements
+All of the following are *statements*:
 
+- Main statements
+- Identifiers
+- Sitelinks
+
+Look at item: [[https://www.wikidata.org/wiki/Q233584][Jeanette Winterson (Q233584)]]
+
+- references of different types (look under date of birth)
+- qualifiers (look under award received)
+
+* Identifiers+ -- VIAF links back!
+#+NAME:  fig:viaf.png
+#+ATTR_HTML: :height 100%
+[[./images/viaf.png]]
+
+* Properties
+Properties describe the relationships between items.
+
+New properties must go through [[https://www.wikidata.org/wiki/Wikidata:Property_proposal][a proposal process]]. ([[https://www.wikidata.org/wiki/Wikidata:Property_proposal/Overview][See all open proposals]])
+
+Look at property: [[https://www.wikidata.org/wiki/Property:P50][author (P50)]]
+
+- [[https://www.wikidata.org/wiki/Help:Data_type][Data type]]
+- [[https://www.wikidata.org/wiki/Help:Property_constraints_portal][Constraints]]
 
 * Query Service (SPARQL)
 https://query.wikidata.org/
 
 Example: [[http://tinyurl.com/y2ktg752][Instance of /work/ (or any of its subclasses) where author is /Jeanette Winterson/]]
 
-Check out the examples and help!
+Check out the examples and the help!
 
 
 
