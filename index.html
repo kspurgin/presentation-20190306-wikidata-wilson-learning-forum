@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Remapping Problematic LCSH in TRLN Discovery</title>
+<meta name="author" content="(Kristina M. Spurgin)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./css/reveal.css"/>
+
+<link rel="stylesheet" href="./css/theme/sky.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="./images/Background1.png" data-background-size="100%"><h1 class="title">Remapping Problematic LCSH in TRLN Discovery</h1><h2 class="author">Kristina M. Spurgin</h2><h2 class="date">2018-11-15</h2>
+</section>
+
+
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org6458985">
+<h2 id="org6458985">Introduction (About me)</h2>
+<ul>
+<li>Library Data Strategist, Head of <a href="https://internal.lib.unc.edu/wikis/staff/index.php/Library_Data_Strategy_&amp;_Services_(LDSS)">Library Data Strategy &amp; Services</a></li>
+<li>TRLN Discovery Developer Team</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+My title is Library Data Strategist and I am head of the Library Data Strategy &amp; Services (LDSS) section in Davis Library Tech Services. 
+</p>
+
+<p>
+LDSS was created as a service point for our colleagues across the libraries. We help folks solve workflow issues and execute projects by using technology to leverage library data at scale. (If this means nothing to you, follow the LDSS link there when you download the slides to learn more.) By "we," I mainly mean jcm who is the data wizard to the "data magician" folks think I am. :-) 
+</p>
+
+<p>
+We also have 3 ongoing routine responsibilities: 
+</p>
+
+<ul>
+<li>MARC metadata for monographic and integrating resource online resources. Connie Israel and jcm keep this running smoothly despite challenges you wouldn't believe.</li>
+<li>non-MARC metadata policy, creation, assessment, remediation, and consultation for the institutional repository, digital collections, and other projects across the Libraries. Anna Goslen and Julia Gootzeit are the powerhouse team on this.</li>
+<li>And the one that's relevant to this presentation: maintaining the processes that extract our entire catalog (Sierra) and transform it for ingest into our shared online catalog.</li>
+
+</ul>
+
+<p>
+I'm also the data expert on the TRLN Discovery Developer Team. 
+TRLN Discovery is the new shared online catalog we've been building for the past couple of years. 
+Which brings me to the question of&#x2026;
+</p>
+
+</aside>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org0d7d3da">
+<h2 id="org0d7d3da">Introduction (About the shared online catalog)</h2>
+<ul>
+<li>TRLN initiative since 2007</li>
+<li>Legacy to now &#x2013; Endeca
+<ul>
+<li><a href="http://search.trln.org/">http://search.trln.org/</a></li>
+<li><a href="https://search.lib.unc.edu/">https://search.lib.unc.edu/</a></li>
+<li><a href="https://search.lib.unc.edu/filmfinder/">https://search.lib.unc.edu/filmfinder/</a></li>
+
+</ul></li>
+<li>Coming soon &#x2013; TRLN Discovery
+<ul>
+<li><a href="https://disco-qa.lib.unc.edu/">https://disco-qa.lib.unc.edu/</a></li>
+
+</ul></li>
+
+</ul>
+
+<aside class="notes">
+<p>
+That it is a TRLN initiative means the catalog is shared between Duke, NC Central, NC State, and UNC Libraries.
+</p>
+
+<p>
+The idea behind this is: 
+</p>
+
+<p>
+Each institution smooshes the data from their ILS-based catalog, digital collections, and other sources into a central, shared index. 
+</p>
+
+<p>
+The online catalog applications (or catalog websites) are built using that shared index as the underlying data source. 
+</p>
+
+<p>
+Currently we have a proprietary shared index built using an Oracle e-commerce product called Endeca. When you use SearchTRLN, you are searching and seeing all the data in the entire Endeca index. When you use search.lib.unc.edu, you are searching that same index, but it's pre-scoped to show only items held by UNC. When you use FilmFinder, it's searching that same index, but pre-scoping even narrower to show only UNC-held films, videos, etc. 
+</p>
+
+<p>
+We are excited to be building a new shared index and associated online catalog web applications based on open-source technologies from (and/or heavily used by) the library community: TRLN Discovery. 
+</p>
+
+<p>
+This is going to work a bit differently than the current catalog where you have to go to SearchTRLN to search across all institutions. 
+</p>
+
+</aside>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-orgf944335">
+<h2 id="orgf944335">"Expand to TRLN"</h2>
+
+<div id="org8fa66c3" class="figure">
+<p><img src="./images/expand_to_trln.png" alt="expand_to_trln.png" height="100%" />
+</p>
+</div>
+
+<aside class="notes">
+<p>
+There won't be a separate equivalent to SearchTRLN any more. UNC users will, in general, remain in the UNC catalog. But the UNC catalog gives you the ability to seamlessly toggle back and forth between UNC holdings only, and all TRLN holdings. 
+</p>
+
+<p>
+Here you can see that we have 132 results at UNC. By clicking on "UNC, Duke, NCSU, NCCU Libraries," we can see all 378 items held across those institutions.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org184a82a">
+<h2 id="org184a82a">TRLN Discovery: Shared index: Solr</h2>
+<ul>
+<li><a href="http://lucene.apache.org/solr/">Solr</a>
+<ul>
+<li>open source</li>
+<li>index + search</li>
+
+</ul></li>
+
+</ul>
+
+<aside class="notes">
+<p>
+With TRLN Discovery, the shared index is built with <a href="http://lucene.apache.org/solr/">Solr</a>, an extremely popular open-source indexing and search platform used for all kinds of applications.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org5a7176d" data-background="./images/solr_directly.png" data-background-size="100%">
+<h2 id="org5a7176d"></h2>
+<aside class="notes">
+<p>
+You can search Solr directly but it ain't easy and it ain't pretty.
+To find online items with goats in the title at UNC, you've got to type in a query like this: 
+</p>
+
+<p>
+"q":"title_main_t:goats AND access_type_f:Online AND institution_a:unc"
+</p>
+
+<p>
+Imagine if you want to search across all the different types of titles! 
+</p>
+
+<p>
+Also, who wants to ever see a page that looks like this (except for a data nerd like me)?
+</p>
+
+<p>
+Can you even see what the title of this first thing is? (Sheep and goats)
+</p>
+
+</aside>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org9df9c98">
+<h2 id="org9df9c98">TRLN Discovery: Shared catalog application: Blacklight</h2>
+<ul>
+<li><a href="http://projectblacklight.org/">Blacklight</a>
+<ul>
+<li>open source</li>
+<li>library-created</li>
+<li>discovery interface</li>
+
+</ul></li>
+
+</ul>
+
+<aside class="notes">
+<p>
+The new online catalog application that will use Solr index as a data source is a modified version of Blacklight. Blacklight is a generic library-centric discovery interface that can be used on top of an index to provide a good user experience. 
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orga9db137" data-background="./images/with_blacklight.png" data-background-size="100%">
+<h2 id="orga9db137"></h2>
+<aside class="notes">
+<p>
+The new online catalog application that will use Solr index as a data source is a modified version of Blacklight. Blacklight is a generic library-centric discovery interface that can be used on top of an index to provide a good user experience. 
+</p>
+
+<p>
+This looks much better! 
+</p>
+
+<p>
+We are getting generally the same results (Sheep and goats is still the first result), but they look much nicer! 
+We are getting a few more results because we are able to tell Blacklight that a title search should search a bunch of fields: 
+main title, variant title, included title, related title, earlier title, etc. 
+</p>
+
+<p>
+We have the facets, and a checkbox to limit to online things &#x2013; all the user interface stuff. 
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org8655314" data-background="./images/solr_directly.png" data-background-size="100%">
+<h2 id="org8655314"></h2>
+<aside class="notes">
+<p>
+Ok, I know this feels like a bit of a deep dive without getting to the point, but I promise this is useful foundation. 
+</p>
+
+<p>
+Let's look at the data in the Solr index again. This is the bibliographic data that the shared online catalog knows about and has available to work with. 
+</p>
+
+<p>
+What do you NOT see here? 
+</p>
+
+<p>
+(MARC!) 
+</p>
+
+</aside>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-orgc065940">
+<h2 id="orgc065940">TRLN Discovery: Shared data model: Argot</h2>
+<ul>
+<li>Argot is our name for our shared data model
+<ul>
+<li>MARC -&gt; Argot</li>
+<li>Digital collections -&gt; Argot</li>
+<li>ICPSR DDI metadata -&gt; Argot</li>
+
+</ul></li>
+<li><a href="https://github.com/trln/data-documentation/tree/master/argot">Argot specification</a> is publicly available</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+We call our shared data model Argot. It's an apt name because it's defined as "the jargon or slang of a particular group or class."
+</p>
+
+<p>
+Any data or records that will be included in TRLN Discovery must be transformed into Argot. This includes: 
+</p>
+<ul>
+<li>ILS MARC bibliographic and holdings data</li>
+<li>ILS non-MARC item and order data</li>
+<li>Digital collections data (Dublin Core, MODS, RDF&#x2026;)</li>
+<li>External record sets such as ICSPR datasets described in DDI XML</li>
+
+</ul>
+
+<p>
+The fields and elements in Argot abstract away from any of these original data formats, translating the data into a common, generalized format <b>optimized for search and desired display behavior</b> in the end-result tool we are designing.
+</p>
+
+<p>
+Designing Argot has been an iterative process, and the specification is currently a bit of a mess, but it IS publicly available and I'm working on producing more friendly views of it. 
+</p>
+
+</aside>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-orgd5964b8">
+<h2 id="orgd5964b8">Representing subject data in Argot</h2>
+<ul>
+<li>subject_headings</li>
+<li>subject_suggest</li>
+<li>subject_topical</li>
+<li>subject_chronological</li>
+<li>subject_geographic</li>
+<li>subject_headings_remapped</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Here's a good example of what I mean when I say we transform the original data source (MARC) to something optimized for TRLN Discovery's desired behavior (Argot). 
+</p>
+
+<p>
+In the MARC record, you record a subject heading or index terms in one of the many 6XX fields and you are done. 
+</p>
+
+<p>
+But each 6XX field (or parts of it) gets mapped to at least 3 of the fields shown here &#x2014; sometimes a single 6XX gets mapped to all of them!
+</p>
+
+</aside>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-orgfc3eea8">
+<h2 id="orgfc3eea8">Subject data in Argot: subject_headings</h2>
+<ul>
+<li>indexed for keyword and subject search</li>
+<li>displayed in full record view with adaptive hyperlinking</li>
+
+</ul>
+
+<p>
+=650  \0$aAbolitionists$zNorth Carolina$xHistory$y19th century$vSources.
+</p>
+
+<pre  class="example">
+"subject_headings": [
+    "Abolitionists -- North Carolina -- History -- 19th century -- Sources"
+  ]
+</pre>
+
+
+<div class="figure">
+<p><img src="./images/subject_heading_behavior.png" alt="subject_heading_behavior.png" height="100%" />
+</p>
+</div>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org10c49a5">
+<h2 id="org10c49a5">Example mappings: subject_headings</h2>
+
+<div class="figure">
+<p><img src="./images/map_subject_headings.png" alt="map_subject_headings.png" height="100%" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org51aab16">
+<h2 id="org51aab16">Subject data in Argot: subject_suggest</h2>
+<ul>
+<li>searched when you start typing in keyword or subject search box</li>
+<li>displayed in auto-suggest dropdown</li>
+
+</ul>
+
+<p>
+=650  \0$aAbolitionists$zNorth Carolina$xHistory$y19th century$vSources.
+</p>
+
+<pre  class="example">
+"subject_suggest": [
+  "Abolitionists -- North Carolina -- History -- 19th century -- Sources"
+]
+</pre>
+
+
+<div class="figure">
+<p><img src="./images/autosuggest.png" alt="autosuggest.png" height="100%" />
+</p>
+</div>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org7f7ba45">
+<h2 id="org7f7ba45">Subject data in Argot: subject_topical</h2>
+<ul>
+<li>populates "About Topic" facet</li>
+
+</ul>
+
+<p>
+=650  \0$aAbolitionists$zNorth Carolina$xHistory$y19th century$vSources.
+</p>
+
+<pre  class="example">
+"subject_topical": [
+  "Abolitionists", "History"
+]
+</pre>
+
+
+<div class="figure">
+<p><img src="./images/about_topic.png" alt="about_topic.png" height="100%" />
+</p>
+</div>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org49b3d3f">
+<h2 id="org49b3d3f">Example mappings: subject_topical</h2>
+
+<div class="figure">
+<p><img src="./images/map_subject_topical.png" alt="map_subject_topical.png" height="100%" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-orgd8172a7">
+<h2 id="orgd8172a7">Subject data in Argot: subject_chronological, subject_geographic</h2>
+<ul>
+<li>populates "About Time Period" and "About Places" facets</li>
+
+</ul>
+
+<p>
+=650  \0$aAbolitionists$zNorth Carolina$xHistory$y19th century$vSources.
+</p>
+
+<pre  class="example">
+"subject_chronological": [
+  "19th century"
+],
+"subject_geographic": [
+  "North Carolina"
+]
+</pre>
+
+<div class="column" style="float:left; width: 50%">
+
+<div class="figure">
+<p><img src="./images/about_time_period.png" alt="about_time_period.png" height="100%" />
+</p>
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div class="figure">
+<p><img src="./images/about_places.png" alt="about_places.png" height="100%" />
+</p>
+</div>
+</div>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org4c1ef59">
+<h2 id="org4c1ef59">Subject data in Argot: subject_headings_remapped</h2>
+<ul>
+<li>NOT displayed in record, facets, or auto-suggest</li>
+<li>indexed for keyword and subject search</li>
+
+</ul>
+
+<p>
+=650  \0$aIllegal aliens$zEurope.
+</p>
+
+<pre  class="example">
+"subject_topical": [
+    "Undocumented immigrants"
+  ],
+  "subject_headings": [
+    "Undocumented immigrants -- Europe"
+  ],
+  "subject_headings_remapped": [
+    "Illegal aliens -- Europe"
+  ]
+</pre>
+
+
+<div class="figure">
+<p><img src="./images/after_subject_display.png" alt="after_subject_display.png" height="100%" />
+</p>
+</div>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-orgdca14a0">
+<h2 id="orgdca14a0">Behavior in TRLN Discovery</h2>
+<ul>
+<li><a href="https://disco-qa.lib.unc.edu/?utf8=%E2%9C%93&amp;search_field=subject&amp;q=%22illegal+aliens%22">Search for subject: "illegal aliens"</a>
+<ul>
+<li>1993 results; not seen in About Topic facet, record; autosuggest issue</li>
+
+</ul></li>
+<li><a href="https://disco-qa.lib.unc.edu/?utf8=%E2%9C%93&amp;search_field=subject&amp;q=%22undocumented+immigrants%22">Search for subject: "undocumented immigrants"</a>
+<ul>
+<li>1974 results; seen in About Topic facet, record</li>
+
+</ul></li>
+
+</ul>
+
+<p>
+<b>Not perfect yet&#x2026; Proof of concept stage! Some weird glitches to look into</b>
+</p>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-orgab3639e">
+<h2 id="orgab3639e">What to remap and what to map it to?</h2>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1qZz-yClkLLmSH-zofGMI8w88Gire7CJK8YArOLwhVj0/edit?usp=sharing">Initial list for proof of concept</a></li>
+<li>Not complete</li>
+<li>Need TRLN-wide agreement</li>
+<li>Governance for this still undecided</li>
+<li><b>Your input needed</b></li>
+
+</ul>
+
+<aside class="notes">
+<p>
+My initial list was based on the following: 
+</p>
+<ul>
+<li><a href="https://www.colorado.edu/libraries/2018/08/19/inclusive-spaces-and-practices">CU Boulder Library's inclusive subject headings project</a></li>
+<li>Searching Twitter for #lcsh and complaints/suggestions</li>
+<li>Personal pet peeve headings</li>
+
+</ul>
+
+</aside>
+
+</section>
+</section>
+<section data-background="./images/Background2.png" data-background-size="100%">
+<section id="slide-org4ad2d46">
+<h2 id="org4ad2d46">So what?</h2>
+<ul>
+<li>This doesn't make our catalog unbiased or fully inclusive (c.f. Emily Drabinski)</li>
+<li>Can be seen as confusing to users &#x2013; Is CU's approach better?</li>
+<li>Technically, not very difficult</li>
+<li>Small step = good step?</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Drabinski, Emily. "Queering the Catalog: Queer Theory and the Politics of Correction." The Library Quarterly: Information, Community, Policy 83, no. 2 (2013): 94-111. <a href="10.1086/669547">10.1086/669547</a>.
+</p>
+
+<p>
+UX principle: don't return results that don't contain the user's query; they won't know why the result is in the set and that will be confusing. 
+We are going to return results for "illegal aliens" where we've removed that phrase from the subject display. 
+CU's approach added additional subject headings (searchable and displayed) 
+</p>
+
+<p>
+Technically, this is not very difficult. Most of the work is already done. There's some tweaking left and concerns about scaling up to large numbers of remapped headings. 
+</p>
+
+<p>
+The biggest concern is the decisionmaking/governance overhead. How will this be organized? Who approves these mappings? The developers want metadata folks to be the ones to maintain these mappings. 
+</p>
+
+</aside>
+</section>
+</section>
+</div>
+</div>
+<script src="./lib/js/head.min.js"></script>
+<script src="./js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: false,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.00,
+minScale: 1.00,
+maxScale: 1.00,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
