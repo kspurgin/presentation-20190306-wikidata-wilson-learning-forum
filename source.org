@@ -94,6 +94,17 @@ lcsh: library of congress subject heading
 #+ATTR_HTML: :height 100%
 [[./images/descriptionuse.png]]
 
+* Alias
+#+NAME:  fig:alias.png
+#+ATTR_HTML: :height 100%
+[[./images/alias.png]]
+
+* Use of alias
+#+NAME:  fig:aliasuse.png
+#+ATTR_HTML: :height 100%
+[[./images/aliasuse.png]]
+
+
 
 * Query Service (SPARQL)
 https://query.wikidata.org/
