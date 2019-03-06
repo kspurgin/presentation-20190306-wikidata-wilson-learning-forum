@@ -178,6 +178,7 @@ Easy ways to start editing Wikidata
 - [[https://tools.wmflabs.org/wikidata-game/distributed/#game=50][Missing birthdate]]
 - [[https://tools.wmflabs.org/wikidata-game/distributed/#game=49][Depiction]]
 - [[https://tools.wmflabs.org/wikidata-game/distributed/#game=40][Items without descriptions]]
+- many more! 
 
 * Get started: Mix'n'match
 Hundreds of vocabularies being reconciled with Wikidata
@@ -208,10 +209,9 @@ Selected others of interest:
 - [[https://meta.wikimedia.org/wiki/Wikimedia_and_Libraries_User_Group][Wikimedia and Libraries User Group]]
 
 * Projects
-- [[https://meta.wikimedia.org/wiki/WikiCite][WikiCite]]
-
 Wikidata projects working out data models, best practices, data enrichment in certain areas, including:
 
+- [[https://meta.wikimedia.org/wiki/WikiCite][WikiCite]]
 - [[https://www.wikidata.org/wiki/Wikidata:WikiProject_Books][Books]]
 - [[https://www.wikidata.org/wiki/Wikidata:WikiProject_Libraries][Libraries]]
 - [[https://www.wikidata.org/wiki/Wikidata:WikiProject_Archival_Description][Archival description]]
