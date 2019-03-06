@@ -75,14 +75,24 @@ lcsh: library of congress subject heading
 #+ATTR_HTML: :height 100%
 [[./images/label.png]]
 
-NOTE: Multilingual. 
-Because I have my primary language set as English I see that as main label. 
-Because I have French set as another lanuguage, I see that in my interface.
+*Multilingual*
+ - Because I have my primary language set as English I see that as main label.
+ - Because I have French set as another lanuguage, I see that in my interface.
 
-* Very multilingual
+* Very multilingual!
 #+NAME:  fig:multilinguallabel.png
 #+ATTR_HTML: :height 100%
 [[./images/multilinguallabel.png]]
+
+* Description
+#+NAME:  fig:description.png
+#+ATTR_HTML: :height 100%
+[[./images/description.png]]
+
+* Use of description
+#+NAME:  fig:descriptionuse.png
+#+ATTR_HTML: :height 100%
+[[./images/descriptionuse.png]]
 
 
 * Query Service (SPARQL)
