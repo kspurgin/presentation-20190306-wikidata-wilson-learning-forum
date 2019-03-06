@@ -49,15 +49,19 @@ Wikibase is a collection of applications and libraries for creating, managing an
 * Linked data lightning refresher
 *Classic linked data concept: TRIPLES*
 
+|---------------------------+-------------+-------------------|
 | Subject | Predicate | Object |
 | owi:[[http://classify.oclc.org/classify2/ClassifyDemo?owi=297853][297853]] | rdaw:[[http://www.rdaregistry.info/Elements/w/#P10256][P10256]] | lcsh:[[http://id.loc.gov/authorities/subjects/sh2008107935.html][sh2008107935]] |
 | Where the wild things are | has subject | Monsters--Fiction |
+|---------------------------+-------------+-------------------|
 
 *The Wikidata version: CLAIMS*
 
-| Item | Property | Value |
-| [[https://www.wikidata.org/wiki/Q13912][Q13912]] | [[https://www.wikidata.org/wiki/Property:P921][P921]] | [[https://www.wikidata.org/wiki/Q276453][Q276453]] |
+|---------------------------+--------------+---------|
+| Item                      | Property     | Value   |
+| [[https://www.wikidata.org/wiki/Q13912][Q13912]]                    | [[https://www.wikidata.org/wiki/Property:P921][P921]]         | [[https://www.wikidata.org/wiki/Q276453][Q276453]] |
 | Where the wild things are | main subject | monster |
+|---------------------------+--------------+---------|
 
 #+BEGIN_NOTES
 owi : oclc work identifier
