@@ -17,7 +17,7 @@
  - Quick intro to Wikidata
  - Selected GLAM Wikidata activity
  - Plans at UNC Chapel Hill Libraries
-
+ - blah
 * Introduction (About the shared online catalog)
  - TRLN initiative since 2007
  - Legacy to now -- Endeca
