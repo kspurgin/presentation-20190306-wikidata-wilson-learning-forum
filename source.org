@@ -17,7 +17,23 @@
  - Quick intro to Wikidata
  - Selected GLAM Wikidata activity
  - Plans at UNC Chapel Hill Libraries
- - blah
+
+#+BEGIN_NOTES
+GLAM = galleries, libraries, archives, museums
+cultural heritage institutions 
+#+END_NOTES
+
+* What is Wikidata? 
+#+BEGIN_QUOTE
+Wikidata is a free and open knowledge base that can be read and edited by both humans and machines.
+Wikidata acts as central storage for the structured data of its Wikimedia sister projects including Wikipedia, Wikivoyage, Wikisource, and others.
+Wikidata also provides support to many other sites and services beyond just Wikimedia projects! The content of Wikidata is available under a free license, exported using standard formats, and can be interlinked to other open data sets on the linked data web. --[[https://www.wikidata.org/wiki/Wikidata:Main_Page][Wikidata home page]]
+#+END_QUOTE
+
+* Resources
+ - [[https://www.wikidata.org/wiki/Wikidata:Wikidata_educational_resources][Wikidata educational resources]]
+ - [[https://www.wikidata.org/wiki/Wikidata:Training][Wikidata training]]
+
 * Introduction (About the shared online catalog)
  - TRLN initiative since 2007
  - Legacy to now -- Endeca

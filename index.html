@@ -26,24 +26,56 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide" data-background="./images/Background1.png"><h1 class="title">Wikidata as a Linked Data Platform</h1><h2 class="author">Kristina M. Spurgin</h2><h2 class="date">2019-03-06</h2><p class="date">Created: 2019-03-05 Tue 20:48</p>
+<section id="sec-title-slide" data-background="./images/Background1.png"><h1 class="title">Wikidata as a Linked Data Platform</h1><h2 class="author">Kristina M. Spurgin</h2><h2 class="date">2019-03-06</h2><p class="date">Created: 2019-03-05 Tue 21:00</p>
 </section>
 
 <section>
-<section id="slide-org97c8744">
-<h2 id="org97c8744">What we'll cover</h2>
+<section id="slide-org417f35e">
+<h2 id="org417f35e">What we'll cover</h2>
 <ul>
 <li>Quick intro to Wikidata</li>
 <li>Selected GLAM Wikidata activity</li>
 <li>Plans at UNC Chapel Hill Libraries</li>
-<li>blah</li>
 
 </ul>
+
+<aside class="notes">
+<p>
+GLAM = galleries, libraries, archives, museums
+cultural heritage institutions 
+</p>
+
+</aside>
+
 </section>
 </section>
 <section>
-<section id="slide-orgaabae86">
-<h2 id="orgaabae86">Introduction (About the shared online catalog)</h2>
+<section id="slide-org4aab64d">
+<h2 id="org4aab64d">What is Wikidata?</h2>
+<blockquote nil>
+<p>
+Wikidata is a free and open knowledge base that can be read and edited by both humans and machines.
+Wikidata acts as central storage for the structured data of its Wikimedia sister projects including Wikipedia, Wikivoyage, Wikisource, and others.
+Wikidata also provides support to many other sites and services beyond just Wikimedia projects! The content of Wikidata is available under a free license, exported using standard formats, and can be interlinked to other open data sets on the linked data web. --<a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata home page</a>
+</p>
+</blockquote>
+
+</section>
+</section>
+<section>
+<section id="slide-orgaa812cc">
+<h2 id="orgaa812cc">Resources</h2>
+<ul>
+<li><a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_educational_resources">Wikidata educational resources</a></li>
+<li><a href="https://www.wikidata.org/wiki/Wikidata:Training">Wikidata training</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgea74010">
+<h2 id="orgea74010">Introduction (About the shared online catalog)</h2>
 <ul>
 <li>TRLN initiative since 2007</li>
 <li>Legacy to now &#x2013; Endeca
@@ -95,10 +127,10 @@ This is going to work a bit differently than the current catalog where you have 
 </section>
 </section>
 <section>
-<section id="slide-org5723be3">
-<h2 id="org5723be3">"Expand to TRLN"</h2>
+<section id="slide-org8c3f34c">
+<h2 id="org8c3f34c">"Expand to TRLN"</h2>
 
-<div id="orgd8391d9" class="figure">
+<div id="orgd1bfc2c" class="figure">
 <p><img src="./images/expand_to_trln.png" alt="expand_to_trln.png" height="100%" />
 </p>
 </div>
@@ -117,8 +149,8 @@ Here you can see that we have 132 results at UNC. By clicking on "UNC, Duke, NCS
 </section>
 </section>
 <section>
-<section id="slide-orgfbc6143">
-<h2 id="orgfbc6143">TRLN Discovery: Shared index: Solr</h2>
+<section id="slide-org775d491">
+<h2 id="org775d491">TRLN Discovery: Shared index: Solr</h2>
 <ul>
 <li><a href="http://lucene.apache.org/solr/">Solr</a>
 <ul>
@@ -139,8 +171,8 @@ With TRLN Discovery, the shared index is built with <a href="http://lucene.apach
 </section>
 </section>
 <section>
-<section id="slide-orgb11bcae" data-background="./images/solr_directly.png" data-background-size="width-of-image">
-<h2 id="orgb11bcae"></h2>
+<section id="slide-org7cd93d9" data-background="./images/solr_directly.png" data-background-size="width-of-image">
+<h2 id="org7cd93d9"></h2>
 <aside class="notes">
 <p>
 You can search Solr directly but it ain't easy and it ain't pretty.
@@ -168,8 +200,8 @@ Can you even see what the title of this first thing is? (Sheep and goats)
 </section>
 </section>
 <section>
-<section id="slide-orgabf0b1f">
-<h2 id="orgabf0b1f">TRLN Discovery: Shared catalog application: Blacklight</h2>
+<section id="slide-orgf015d85">
+<h2 id="orgf015d85">TRLN Discovery: Shared catalog application: Blacklight</h2>
 <ul>
 <li><a href="http://projectblacklight.org/">Blacklight</a>
 <ul>
@@ -191,8 +223,8 @@ The new online catalog application that will use Solr index as a data source is 
 </section>
 </section>
 <section>
-<section id="slide-org82ea866" data-background="./images/with_blacklight.png" data-background-size="width-of-image">
-<h2 id="org82ea866"></h2>
+<section id="slide-org34b4ccf" data-background="./images/with_blacklight.png" data-background-size="width-of-image">
+<h2 id="org34b4ccf"></h2>
 <aside class="notes">
 <p>
 The new online catalog application that will use Solr index as a data source is a modified version of Blacklight. Blacklight is a generic library-centric discovery interface that can be used on top of an index to provide a good user experience. 
@@ -217,8 +249,8 @@ We have the facets, and a checkbox to limit to online things &#x2013; all the us
 </section>
 </section>
 <section>
-<section id="slide-org4428084" data-background="./images/solr_directly.png" data-background-size="width-of-image">
-<h2 id="org4428084"></h2>
+<section id="slide-orge3903c7" data-background="./images/solr_directly.png" data-background-size="width-of-image">
+<h2 id="orge3903c7"></h2>
 <aside class="notes">
 <p>
 Ok, I know this feels like a bit of a deep dive without getting to the point, but I promise this is useful foundation. 
@@ -241,8 +273,8 @@ What do you NOT see here?
 </section>
 </section>
 <section>
-<section id="slide-orgef18d58">
-<h2 id="orgef18d58">TRLN Discovery: Shared data model: Argot</h2>
+<section id="slide-org0e9bce8">
+<h2 id="org0e9bce8">TRLN Discovery: Shared data model: Argot</h2>
 <ul>
 <li>Argot is our name for our shared data model
 <ul>
@@ -284,8 +316,8 @@ Designing Argot has been an iterative process, and the specification is currentl
 </section>
 </section>
 <section>
-<section id="slide-orgc6e78ce">
-<h2 id="orgc6e78ce">Representing subject data in Argot</h2>
+<section id="slide-orge1e9d38">
+<h2 id="orge1e9d38">Representing subject data in Argot</h2>
 <ul>
 <li>subject_headings</li>
 <li>subject_suggest</li>
@@ -314,8 +346,8 @@ But each 6XX field (or parts of it) gets mapped to at least 3 of the fields show
 </section>
 </section>
 <section>
-<section id="slide-org6ee5d49">
-<h2 id="org6ee5d49">Subject data in Argot: subject_headings</h2>
+<section id="slide-org0405265">
+<h2 id="org0405265">Subject data in Argot: subject_headings</h2>
 <ul>
 <li>indexed for keyword and subject search</li>
 <li>displayed in full record view with adaptive hyperlinking</li>
@@ -341,8 +373,8 @@ But each 6XX field (or parts of it) gets mapped to at least 3 of the fields show
 </section>
 </section>
 <section>
-<section id="slide-orgc045285">
-<h2 id="orgc045285">Example mappings: subject_headings</h2>
+<section id="slide-org4b8d311">
+<h2 id="org4b8d311">Example mappings: subject_headings</h2>
 
 <div class="figure">
 <p><img src="./images/map_subject_headings.png" alt="map_subject_headings.png" height="100%" />
@@ -353,8 +385,8 @@ But each 6XX field (or parts of it) gets mapped to at least 3 of the fields show
 </section>
 </section>
 <section>
-<section id="slide-orgc26db34">
-<h2 id="orgc26db34">Subject data in Argot: subject_suggest</h2>
+<section id="slide-org0260ce7">
+<h2 id="org0260ce7">Subject data in Argot: subject_suggest</h2>
 <ul>
 <li>searched when you start typing in keyword or subject search box</li>
 <li>displayed in auto-suggest dropdown</li>
@@ -380,8 +412,8 @@ But each 6XX field (or parts of it) gets mapped to at least 3 of the fields show
 </section>
 </section>
 <section>
-<section id="slide-org47e91bc">
-<h2 id="org47e91bc">Subject data in Argot: subject_topical</h2>
+<section id="slide-org78d435d">
+<h2 id="org78d435d">Subject data in Argot: subject_topical</h2>
 <ul>
 <li>populates "About Topic" facet</li>
 
@@ -406,8 +438,8 @@ But each 6XX field (or parts of it) gets mapped to at least 3 of the fields show
 </section>
 </section>
 <section>
-<section id="slide-orgd7bbb98">
-<h2 id="orgd7bbb98">Example mappings: subject_topical</h2>
+<section id="slide-orga0f72c7">
+<h2 id="orga0f72c7">Example mappings: subject_topical</h2>
 
 <div class="figure">
 <p><img src="./images/map_subject_topical.png" alt="map_subject_topical.png" height="100%" />
@@ -418,8 +450,8 @@ But each 6XX field (or parts of it) gets mapped to at least 3 of the fields show
 </section>
 </section>
 <section>
-<section id="slide-org4ea7fe6">
-<h2 id="org4ea7fe6">Subject data in Argot: subject_chronological, subject_geographic</h2>
+<section id="slide-orgc7c8b37">
+<h2 id="orgc7c8b37">Subject data in Argot: subject_chronological, subject_geographic</h2>
 <ul>
 <li>populates "About Time Period" and "About Places" facets</li>
 
@@ -457,8 +489,8 @@ But each 6XX field (or parts of it) gets mapped to at least 3 of the fields show
 </section>
 </section>
 <section>
-<section id="slide-orgdb9dfbf">
-<h2 id="orgdb9dfbf">Subject data in Argot: subject_headings_remapped</h2>
+<section id="slide-orgddfb1c1">
+<h2 id="orgddfb1c1">Subject data in Argot: subject_headings_remapped</h2>
 <ul>
 <li>NOT displayed in record, facets, or auto-suggest</li>
 <li>indexed for keyword and subject search</li>
@@ -490,8 +522,8 @@ But each 6XX field (or parts of it) gets mapped to at least 3 of the fields show
 </section>
 </section>
 <section>
-<section id="slide-org19ac0f2">
-<h2 id="org19ac0f2">Behavior in TRLN Discovery</h2>
+<section id="slide-org94ab42a">
+<h2 id="org94ab42a">Behavior in TRLN Discovery</h2>
 <ul>
 <li><a href="https://disco-qa.lib.unc.edu/?utf8=%E2%9C%93&amp;search_field=subject&amp;q=%22illegal+aliens%22">Search for subject: "illegal aliens"</a>
 <ul>
@@ -513,8 +545,8 @@ But each 6XX field (or parts of it) gets mapped to at least 3 of the fields show
 </section>
 </section>
 <section>
-<section id="slide-org113fd6c">
-<h2 id="org113fd6c">What to remap and what to map it to?</h2>
+<section id="slide-org2e6c951">
+<h2 id="org2e6c951">What to remap and what to map it to?</h2>
 <ul>
 <li><a href="https://docs.google.com/spreadsheets/d/1qZz-yClkLLmSH-zofGMI8w88Gire7CJK8YArOLwhVj0/edit?usp=sharing">Initial list for proof of concept</a></li>
 <li>Not complete</li>
@@ -540,8 +572,8 @@ My initial list was based on the following:
 </section>
 </section>
 <section>
-<section id="slide-orgdb1c2a6">
-<h2 id="orgdb1c2a6">So what?</h2>
+<section id="slide-org998a339">
+<h2 id="org998a339">So what?</h2>
 <ul>
 <li>This doesn't make our catalog unbiased or fully inclusive (c.f. Emily Drabinski)</li>
 <li>Can be seen as confusing to users &#x2013; Is CU's approach better?</li>
