@@ -135,6 +135,9 @@ Look at property: [[https://www.wikidata.org/wiki/Property:P50][author (P50)]]
 - [[https://www.wikidata.org/wiki/Help:Data_type][Data type]]
 - [[https://www.wikidata.org/wiki/Help:Property_constraints_portal][Constraints]]
 
+* Discussion and history
+[[https://www.wikidata.org/wiki/Q571][View item for: book (Q571)]]
+
 * Query Service (SPARQL)
 https://query.wikidata.org/
 
