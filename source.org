@@ -56,7 +56,7 @@ Wikibase is a collection of applications and libraries for creating, managing an
 | Where the wild things are | has subject | Monsters--Fiction |
 |---------------------------+-------------+-------------------|
 
-*The Wikidata version: CLAIMS*
+*The Wikidata version: STATEMENTS or CLAIMS*
 
 |---------------------------+--------------+---------|
 | Item                      | Property     | Value   |
@@ -158,7 +158,7 @@ Nicer views of Wikidata
 #+ATTR_HTML: :height 100%
 [[./images/reasonatorplus.png]]
 
-* The ecosystem: Wikidata Graph Builder
+* The ecosystem: [[https://angryloki.github.io/wikidata-graph-builder/][Wikidata Graph Builder]]
 Visual way to explore relationships/ontology in Wikidata
 
 [[https://angryloki.github.io/wikidata-graph-builder/?property=P279&item=Q571&iterations=5&limit=5][Class hierarchy for "book" (Q571)]]
@@ -167,9 +167,67 @@ Visual way to explore relationships/ontology in Wikidata
 #+ATTR_HTML: :height 100%
 [[./images/wgb.png]]
 
+* The ecosystem: [[https://tools.wmflabs.org/sqid/#/][SQID]]
+[[https://tools.wmflabs.org/sqid/#/view?id=Q571][SQID Item Browser entry for "book" (Q571)]]
+
+[[https://tools.wmflabs.org/sqid/#/browse?type=properties][SQID Property Browser]] -- look at properties used for class "book (Q571)"
+
+* Get started: [[https://tools.wmflabs.org/wikidata-game/distributed/#][The Distributed Game]]
+Easy ways to start editing Wikidata
+
+- [[https://tools.wmflabs.org/wikidata-game/distributed/#game=50][Missing birthdate]]
+- [[https://tools.wmflabs.org/wikidata-game/distributed/#game=49][Depiction]]
+- [[https://tools.wmflabs.org/wikidata-game/distributed/#game=40][Items without descriptions]]
+
+* Get started: Mix'n'match
+Hundreds of vocabularies being reconciled with Wikidata
+
+Interface to: 
+
+- verify automatic matches
+- simplify process of creating new matches
+
+Example: [[https://tools.wmflabs.org/mix-n-match/#/catalog/399][JSTOR topics vocabulary]]
+
+Selected others of interest:
+- [[https://tools.wmflabs.org/mix-n-match/#/catalog/427][LoC names]], [[https://tools.wmflabs.org/mix-n-match/#/catalog/1277][LoC Relators]]
+- [[https://tools.wmflabs.org/mix-n-match/#/catalog/68][ORCID]]
+- [[https://tools.wmflabs.org/mix-n-match/#/catalog/2050][Selected VIAF entries]]
+- [[https://tools.wmflabs.org/mix-n-match/#/catalog/344][SNAC person ids (Social Networks Archival Context)]] 99.9% complete!
+- [[https://tools.wmflabs.org/mix-n-match/#/catalog/983][OpenDOAR]]
+
+* The big time: Wikidata at scale
+- [[https://tools.wmflabs.org/openrefine-wikidata/][OpenRefine]]
+- [[https://tools.wmflabs.org/wikidata-todo/quick_statements.php][QuickStatements]]
+- [[http://petscan.wmflabs.org/][PetScan]]
+
+* GLAM and Wikidata? -- General
+- Allison-Cassin, Stacy and Scott, Dan. (May 2018) [[https://journal.code4lib.org/articles/13424][Wikidata: a platform for your library’s linked open data.]] Code4Lib Journal, Issue 40.
+- ARL draft white paper on Wikimedia and Linked Open Data open for comment in Fall 2018. ([[https://www.arl.org/news/arl-news/4682-arl-wikimedia-and-linked-open-data-draft-white-paper-open-for-comments-through-november-30][about]] | [[https://docs.google.com/document/d/1ZsOyw2sOD3a7xJQ6XCSYDGjZUPxGGl8tuvC7vvtlJRU/edit][draft]])
+- [[https://www.facebook.com/groups/Wikidata.GLAM/][Wikidata + GLAM Facebook group]]
+- [[https://meta.wikimedia.org/wiki/Wikimedia_and_Libraries_User_Group][Wikimedia and Libraries User Group]]
+
+* Projects
+- [[https://meta.wikimedia.org/wiki/WikiCite][WikiCite]]
+
+Wikidata projects working out data models, best practices, data enrichment in certain areas, including:
+
+- [[https://www.wikidata.org/wiki/Wikidata:WikiProject_Books][Books]]
+- [[https://www.wikidata.org/wiki/Wikidata:WikiProject_Libraries][Libraries]]
+- [[https://www.wikidata.org/wiki/Wikidata:WikiProject_Archival_Description][Archival description]]
+- [[https://www.wikidata.org/wiki/Wikidata:WikiProject_Source_MetaData/Indexes][Indexes]]
+- [[https://www.wikidata.org/wiki/Wikidata:WikiProject_Cultural_heritage][Cultural heritage]]
+- [[https://www.wikidata.org/wiki/Wikidata:WikiProject_Events][Events]] (including conferences... citation implications!)
+
+* Applications
+- [[https://tools.wmflabs.org/scholia/][Scholia]] - interface to the scholarly bibliographic data in Wikidata
+- [[https://search.library.wisc.edu/catalog/9910034010302121][University of Wisconsin-Madison Libraries catalog integration]] - "Information from the Web" section added to end of record view
+- [[https://laurentian.concat.ca/eg/opac/record/738234?locg=105][Laurentian University Library catalog integration]]  
+
 * GLAM Wikibase
 - OCLC's [[http://www.projectpassage.org/wiki/Main_Page][Project Passage]] ([[https://www.oclc.org/research/themes/data-science/linkeddata/linked-data-prototype.html][overview]])
 - Europeana's [[https://wiki.eagle-network.eu/wiki/Main_Page][EAGLE Project]]
+- Rhizome [[https://wikimediafoundation.org/2018/09/06/rhizome-wikibase/][plans to migrate its ArtBase]]
 
 #+BEGIN_NOTES
 *Project Passage*: a prototype to demonstrate the value of linked data for improving resource-description workflows in libraries
@@ -182,9 +240,28 @@ NCSU is a partner
 *EAGLE*: authoritative multilingual source of translations of ancient Greek and Roman inscriptions
 #+END_NOTES
 
+
+* At UNC Chapel Hill Libraries
+*On the table:*
+
+- model the Libraries in Wikidata
+  - [[https://www.wikidata.org/wiki/Q49060650][University Libraries at the University of North Carolina at Chapel Hill (Q49060650)]]
+  - [[https://www.wikidata.org/wiki/Q14708020][Wilson Special Collections Library (Q14708020)]]
+  - others?
+- addition of [[https://www.wikidata.org/wiki/Property:P485][archives at (P485)]] property to Wikidata items for people and organizations whose papers or correspondence we hold
+
+*Other ideas:*
+
+- create items for unique archival collections
+- representing our faculty and publications in Wikidata (?)
+- edit-a-thons to reconcile vocabularies we care about
+- experiment with leveraging Wikidata in our systems
+- NC Metadata Connect name authority project (possible use of Wikibase)
+
 * Resources
  - [[https://www.wikidata.org/wiki/Wikidata:Wikidata_educational_resources][Wikidata educational resources]]
  - [[https://www.wikidata.org/wiki/Wikidata:Training][Wikidata training]]
 
 This presentation heavily cribbed from: 
- -  [[https://www.wikidata.org/wiki/Wikidata:In_one_page][Wikidata in one page]]
+ - [[https://www.wikidata.org/wiki/Wikidata:In_one_page][Wikidata in one page]]
+ - ARL draft white paper on Wikidata in Libraries 
