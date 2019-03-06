@@ -36,9 +36,10 @@ Wikidata also provides support to many other sites and services beyond just Wiki
 * What about Wikibase?
 Wikibase is the software application under Wikidata. 
 
-[[https://en.wikipedia.org/wiki/Main_Page][Wikipedia]] <-> *[[https://www.mediawiki.org/wiki/MediaWiki][MediaWiki]]* <-> [[https://internal.lib.unc.edu/wikis/staff/index.php/Main_Page][UNC Libraries Staff Wiki]]
-
-[[https://www.wikidata.org/wiki/Wikidata:Main_Page][Wikidata]] <-> *[[http://wikiba.se/][Wikibase]]* <-> (UNC Libraries Linked Data portal?)
+|----------+----+------------+----+-------------------------------------|
+| [[https://en.wikipedia.org/wiki/Main_Page][Wikipedia]] | <-  | *[[https://www.mediawiki.org/wiki/MediaWiki][MediaWiki]]* | -> | [[https://internal.lib.unc.edu/wikis/staff/index.php/Main_Page][UNC Libraries Staff Wiki]] |
+| [[https://www.wikidata.org/wiki/Wikidata:Main_Page][Wikidata]] | <- | *[[http://wikiba.se/][Wikibase]]* | -> | (UNC Libraries Linked Data portal?) |
+|----------+----+------------+----+-------------------------------------|
 
 #+BEGIN_NOTES
 You don't get very far into learning about Wikidata before you start hearing about Wikibase. This can be a little confusing.
