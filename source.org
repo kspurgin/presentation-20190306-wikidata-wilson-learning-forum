@@ -25,297 +25,78 @@ cultural heritage institutions
 
 * What is Wikidata? 
 #+BEGIN_QUOTE
-Wikidata is a free and open knowledge base that can be read and edited by both humans and machines.
-Wikidata acts as central storage for the structured data of its Wikimedia sister projects including Wikipedia, Wikivoyage, Wikisource, and others.
-Wikidata also provides support to many other sites and services beyond just Wikimedia projects! The content of Wikidata is available under a free license, exported using standard formats, and can be interlinked to other open data sets on the linked data web. --[[https://www.wikidata.org/wiki/Wikidata:Main_Page][Wikidata home page]]
+Wikidata is a *free and open knowledge base that can be read and edited by both humans and machines*.
+Wikidata acts as *central storage for the structured data* of its Wikimedia sister projects including Wikipedia, Wikivoyage, Wikisource, and others.
+
+Wikidata also provides support to many other sites and services beyond just Wikimedia projects! The content of Wikidata is *available under a free license, exported using standard formats, and can be interlinked to other open data sets on the linked data web*. --[[https://www.wikidata.org/wiki/Wikidata:Main_Page][Wikidata home page]]
 #+END_QUOTE
+
+/See also: [[https://www.wikidata.org/wiki/Wikidata:Introduction][Wikidata introduction]]/
+
+* What about Wikibase?
+Wikibase is the software application under Wikidata. 
+
+[[https://en.wikipedia.org/wiki/Main_Page][Wikipedia]] <-> *[[https://www.mediawiki.org/wiki/MediaWiki][MediaWiki]]* <-> [[https://internal.lib.unc.edu/wikis/staff/index.php/Main_Page][UNC Libraries Staff Wiki]]
+
+[[https://www.wikidata.org/wiki/Wikidata:Main_Page][Wikidata]] <-> *[[http://wikiba.se/][Wikibase]]* <-> (UNC Libraries Linked Data portal?)
+
+#+BEGIN_NOTES
+You don't get very far into learning about Wikidata before you start hearing about Wikibase. This can be a little confusing.
+
+Wikibase is a collection of applications and libraries for creating, managing and sharing structured data. It is an open source project and everyone is welcome to join in development. --[[http://wikiba.se/][Wikibase project home]]
+#+END_NOTES
+
+* Linked data lightning refresher
+*Classic linked data concept: TRIPLES*
+Subject -> Predicate -> Object
+owi:[[http://classify.oclc.org/classify2/ClassifyDemo?owi=297853][297853]] -> rdaw:[[http://www.rdaregistry.info/Elements/w/#P10256][P10256]] -> lcsh:[[http://id.loc.gov/authorities/subjects/sh2008107935.html][sh2008107935]]
+Where the wild things are -> has subject -> Monsters--Fiction
+
+*The Wikidata version: CLAIMS*
+Item -> Property -> Value
+[[https://www.wikidata.org/wiki/Q13912][Q13912]] -> [[https://www.wikidata.org/wiki/Property:P921][P921]] -> [[https://www.wikidata.org/wiki/Q276453][Q276453]]
+Where the wild things are -> main subject -> monster
+
+#+BEGIN_NOTES
+owi : oclc work identifier
+rdaw: rda work property
+lcsh: library of congress subject heading
+#+END_NOTES
+
+* Label
+#+NAME:  fig:label.png
+#+ATTR_HTML: :height 100%
+[[./images/label.png]]
+
+
+* Query Service (SPARQL)
+https://query.wikidata.org/
+
+Example: [[http://tinyurl.com/y2ktg752][Instance of /work/ (or any of its subclasses) where author is /Jeanette Winterson/]]
+
+Check out the examples and help!
+
+
+
+
+* GLAM Wikibase
+- OCLC's [[http://www.projectpassage.org/wiki/Main_Page][Project Passage]] ([[https://www.oclc.org/research/themes/data-science/linkeddata/linked-data-prototype.html][overview]])
+- Europeana's [[https://wiki.eagle-network.eu/wiki/Main_Page][EAGLE Project]]
+
+#+BEGIN_NOTES
+*Project Passage*: a prototype to demonstrate the value of linked data for improving resource-description workflows in libraries
+
+- Reconciliation service – to connect legacy bibliographic information to linked data entities
+- An editor service – to view, create and edit linked data descriptions and relationships
+
+NCSU is a partner
+
+*EAGLE*: authoritative multilingual source of translations of ancient Greek and Roman inscriptions
+#+END_NOTES
 
 * Resources
  - [[https://www.wikidata.org/wiki/Wikidata:Wikidata_educational_resources][Wikidata educational resources]]
  - [[https://www.wikidata.org/wiki/Wikidata:Training][Wikidata training]]
 
-* Introduction (About the shared online catalog)
- - TRLN initiative since 2007
- - Legacy to now -- Endeca
-   - http://search.trln.org/
-   - https://search.lib.unc.edu/
-   - https://search.lib.unc.edu/filmfinder/
- - Coming soon -- TRLN Discovery
-   - https://disco-qa.lib.unc.edu/
-
-#+BEGIN_NOTES
-That it is a TRLN initiative means the catalog is shared between Duke, NC Central, NC State, and UNC Libraries.
-
-The idea behind this is: 
-
-Each institution smooshes the data from their ILS-based catalog, digital collections, and other sources into a central, shared index. 
-
-The online catalog applications (or catalog websites) are built using that shared index as the underlying data source. 
-
-Currently we have a proprietary shared index built using an Oracle e-commerce product called Endeca. When you use SearchTRLN, you are searching and seeing all the data in the entire Endeca index. When you use search.lib.unc.edu, you are searching that same index, but it's pre-scoped to show only items held by UNC. When you use FilmFinder, it's searching that same index, but pre-scoping even narrower to show only UNC-held films, videos, etc. 
-
-We are excited to be building a new shared index and associated online catalog web applications based on open-source technologies from (and/or heavily used by) the library community: TRLN Discovery. 
-
-This is going to work a bit differently than the current catalog where you have to go to SearchTRLN to search across all institutions. 
-#+END_NOTES
-
-* "Expand to TRLN"
-#+NAME:  fig:expand_to_trln.png
-#+ATTR_HTML: :height 100%
-[[./images/expand_to_trln.png]]
-
-#+BEGIN_NOTES
-There won't be a separate equivalent to SearchTRLN any more. UNC users will, in general, remain in the UNC catalog. But the UNC catalog gives you the ability to seamlessly toggle back and forth between UNC holdings only, and all TRLN holdings. 
-
-Here you can see that we have 132 results at UNC. By clicking on "UNC, Duke, NCSU, NCCU Libraries," we can see all 378 items held across those institutions.
-#+END_NOTES
-
-* TRLN Discovery: Shared index: Solr 
- - [[http://lucene.apache.org/solr/][Solr]]
-   - open source
-   - index + search
-
-#+BEGIN_NOTES
-With TRLN Discovery, the shared index is built with [[http://lucene.apache.org/solr/][Solr]], an extremely popular open-source indexing and search platform used for all kinds of applications.
-#+END_NOTES
-
-* 
-:PROPERTIES:
-:reveal_background: ./images/solr_directly.png
-:reveal_background_size: width-of-image
-:END:
-
-#+BEGIN_NOTES
-You can search Solr directly but it ain't easy and it ain't pretty.
-To find online items with goats in the title at UNC, you've got to type in a query like this: 
-
-"q":"title_main_t:goats AND access_type_f:Online AND institution_a:unc"
-
-Imagine if you want to search across all the different types of titles! 
-
-Also, who wants to ever see a page that looks like this (except for a data nerd like me)?
-
-Can you even see what the title of this first thing is? (Sheep and goats)
-#+END_NOTES
-
-* TRLN Discovery: Shared catalog application: Blacklight
- - [[http://projectblacklight.org/][Blacklight]]
-   - open source
-   - library-created
-   - discovery interface
-
-#+BEGIN_NOTES
- The new online catalog application that will use Solr index as a data source is a modified version of Blacklight. Blacklight is a generic library-centric discovery interface that can be used on top of an index to provide a good user experience. 
-#+END_NOTES
-
-* 
-:PROPERTIES:
-:reveal_background: ./images/with_blacklight.png
-:reveal_background_size: width-of-image
-:END:
-
-#+BEGIN_NOTES
- The new online catalog application that will use Solr index as a data source is a modified version of Blacklight. Blacklight is a generic library-centric discovery interface that can be used on top of an index to provide a good user experience. 
-
-This looks much better! 
-
-We are getting generally the same results (Sheep and goats is still the first result), but they look much nicer! 
-We are getting a few more results because we are able to tell Blacklight that a title search should search a bunch of fields: 
-main title, variant title, included title, related title, earlier title, etc. 
-
-We have the facets, and a checkbox to limit to online things -- all the user interface stuff. 
-#+END_NOTES
-
-* 
-:PROPERTIES:
-:reveal_background: ./images/solr_directly.png
-:reveal_background_size: width-of-image
-:END:
-
-#+BEGIN_NOTES
-Ok, I know this feels like a bit of a deep dive without getting to the point, but I promise this is useful foundation. 
-
-Let's look at the data in the Solr index again. This is the bibliographic data that the shared online catalog knows about and has available to work with. 
-
-What do you NOT see here? 
-
-(MARC!) 
-#+END_NOTES
-
-* TRLN Discovery: Shared data model: Argot 
- - Argot is our name for our shared data model
-   - MARC -> Argot
-   - Digital collections -> Argot
-   - ICPSR DDI metadata -> Argot
- - [[https://github.com/trln/data-documentation/tree/master/argot][Argot specification]] is publicly available
-
-#+BEGIN_NOTES
-We call our shared data model Argot. It's an apt name because it's defined as "the jargon or slang of a particular group or class."
-
-Any data or records that will be included in TRLN Discovery must be transformed into Argot. This includes: 
- - ILS MARC bibliographic and holdings data
- - ILS non-MARC item and order data
- - Digital collections data (Dublin Core, MODS, RDF...)
- - External record sets such as ICSPR datasets described in DDI XML
-
-The fields and elements in Argot abstract away from any of these original data formats, translating the data into a common, generalized format *optimized for search and desired display behavior* in the end-result tool we are designing.
-
-Designing Argot has been an iterative process, and the specification is currently a bit of a mess, but it IS publicly available and I'm working on producing more friendly views of it. 
-#+END_NOTES
-
-* Representing subject data in Argot
- - subject_headings
- - subject_suggest
- - subject_topical
- - subject_chronological
- - subject_geographic
- - subject_headings_remapped
-
-#+BEGIN_NOTES
-Here's a good example of what I mean when I say we transform the original data source (MARC) to something optimized for TRLN Discovery's desired behavior (Argot). 
-
-In the MARC record, you record a subject heading or index terms in one of the many 6XX fields and you are done. 
-
-But each 6XX field (or parts of it) gets mapped to at least 3 of the fields shown here --- sometimes a single 6XX gets mapped to all of them!
-#+END_NOTES
-
-* Subject data in Argot: subject_headings
- - indexed for keyword and subject search
- - displayed in full record view with adaptive hyperlinking
-
-=650  \0$aAbolitionists$zNorth Carolina$xHistory$y19th century$vSources.
-
-#+BEGIN_SRC 
-"subject_headings": [
-    "Abolitionists -- North Carolina -- History -- 19th century -- Sources"
-  ]
-#+END_SRC
-
-#+ATTR_HTML: :height 100%
-[[./images/subject_heading_behavior.png]]
-
-* Example mappings: subject_headings
-
-#+ATTR_HTML: :height 100%
-[[./images/map_subject_headings.png]]
-
-
-* Subject data in Argot: subject_suggest
- - searched when you start typing in keyword or subject search box
- - displayed in auto-suggest dropdown
-
-=650  \0$aAbolitionists$zNorth Carolina$xHistory$y19th century$vSources.
-
-#+BEGIN_SRC 
-  "subject_suggest": [
-    "Abolitionists -- North Carolina -- History -- 19th century -- Sources"
-  ]
-#+END_SRC
-
-#+ATTR_HTML: :height 100%
-[[./images/autosuggest.png]]
-
-* Subject data in Argot: subject_topical
- - populates "About Topic" facet
-
-=650  \0$aAbolitionists$zNorth Carolina$xHistory$y19th century$vSources.
-
-#+BEGIN_SRC 
-  "subject_topical": [
-    "Abolitionists", "History"
-  ]
-#+END_SRC
-
-#+ATTR_HTML: :height 100%
-[[./images/about_topic.png]]
-
-* Example mappings: subject_topical
-
-#+ATTR_HTML: :height 100%
-[[./images/map_subject_topical.png]]
-
-
-* Subject data in Argot: subject_chronological, subject_geographic
- - populates "About Time Period" and "About Places" facets
-
-=650  \0$aAbolitionists$zNorth Carolina$xHistory$y19th century$vSources.
-
-#+BEGIN_SRC 
-  "subject_chronological": [
-    "19th century"
-  ],
-  "subject_geographic": [
-    "North Carolina"
-  ]
-#+END_SRC
-
-#+REVEAL_HTML: <div class="column" style="float:left; width: 50%">
-#+ATTR_HTML: :height 100%
-[[./images/about_time_period.png]]
-#+REVEAL_HTML: </div>
-
-#+REVEAL_HTML: <div class="column" style="float:right; width: 50%">
-#+ATTR_HTML: :height 100%
-[[./images/about_places.png]]
-#+REVEAL_HTML: </div>
-
-* Subject data in Argot: subject_headings_remapped
- - NOT displayed in record, facets, or auto-suggest
- - indexed for keyword and subject search
-
-=650  \0$aIllegal aliens$zEurope.
-
-#+BEGIN_SRC 
-"subject_topical": [
-    "Undocumented immigrants"
-  ],
-  "subject_headings": [
-    "Undocumented immigrants -- Europe"
-  ],
-  "subject_headings_remapped": [
-    "Illegal aliens -- Europe"
-  ]
-#+END_SRC
-
-#+ATTR_HTML: :height 100%
-[[./images/after_subject_display.png]]
-
-* Behavior in TRLN Discovery
- - [[https://disco-qa.lib.unc.edu/?utf8=%E2%9C%93&search_field=subject&q=%22illegal+aliens%22][Search for subject: "illegal aliens"]]
-   - 1993 results; not seen in About Topic facet, record; autosuggest issue
- - [[https://disco-qa.lib.unc.edu/?utf8=%E2%9C%93&search_field=subject&q=%22undocumented+immigrants%22][Search for subject: "undocumented immigrants"]]
-   - 1974 results; seen in About Topic facet, record
-
-*Not perfect yet... Proof of concept stage! Some weird glitches to look into*
-
-* What to remap and what to map it to? 
- - [[https://docs.google.com/spreadsheets/d/1qZz-yClkLLmSH-zofGMI8w88Gire7CJK8YArOLwhVj0/edit?usp=sharing][Initial list for proof of concept]]
- - Not complete
- - Need TRLN-wide agreement
- - Governance for this still undecided
- - *Your input needed*
-
-#+BEGIN_NOTES
-My initial list was based on the following: 
- - [[https://www.colorado.edu/libraries/2018/08/19/inclusive-spaces-and-practices][CU Boulder Library's inclusive subject headings project]]
- - Searching Twitter for #lcsh and complaints/suggestions
- - Personal pet peeve headings
-#+END_NOTES
-
-* So what?
- - This doesn't make our catalog unbiased or fully inclusive (c.f. Emily Drabinski)
- - Can be seen as confusing to users -- Is CU's approach better?
- - Technically, not very difficult
- - Small step = good step?
-
-#+BEGIN_NOTES
-Drabinski, Emily. "Queering the Catalog: Queer Theory and the Politics of Correction." The Library Quarterly: Information, Community, Policy 83, no. 2 (2013): 94-111. doi:10.1086/669547.
-
-UX principle: don't return results that don't contain the user's query; they won't know why the result is in the set and that will be confusing. 
-We are going to return results for "illegal aliens" where we've removed that phrase from the subject display. 
-CU's approach added additional subject headings (searchable and displayed) 
-
-Technically, this is not very difficult. Most of the work is already done. There's some tweaking left and concerns about scaling up to large numbers of remapped headings. 
-
-The biggest concern is the decisionmaking/governance overhead. How will this be organized? Who approves these mappings? The developers want metadata folks to be the ones to maintain these mappings. 
-#+END_NOTES
+This presentation heavily cribbed from: 
+ -  [[https://www.wikidata.org/wiki/Wikidata:In_one_page][Wikidata in one page]]
