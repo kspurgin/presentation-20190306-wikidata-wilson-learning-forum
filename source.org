@@ -142,8 +142,30 @@ Example: [[http://tinyurl.com/y2ktg752][Instance of /work/ (or any of its subcla
 
 Check out the examples and the help!
 
+* The ecosystem: [[https://tools.wmflabs.org/reasonator/][Reasonator]]
+Nicer views of Wikidata
 
+[[https://tools.wmflabs.org/reasonator/?&q=233584][Reasonator view for Jeanette Winterson]]
 
+#+NAME:  fig:reasonator.png
+#+ATTR_HTML: :height 100%
+[[./images/reasonator.png]]
+
+* The ecosystem: [[https://tools.wmflabs.org/reasonator/][Reasonator]]
+[[https://tools.wmflabs.org/reasonator/?&q=233584][Reasonator view for Jeanette Winterson]]
+
+#+NAME:  fig:reasonatorplus.png
+#+ATTR_HTML: :height 100%
+[[./images/reasonatorplus.png]]
+
+* The ecosystem: Wikidata Graph Builder
+Visual way to explore relationships/ontology in Wikidata
+
+[[https://angryloki.github.io/wikidata-graph-builder/?property=P279&item=Q571&iterations=5&limit=5][Class hierarchy for "book" (Q571)]]
+
+#+NAME:  fig:wgb.png
+#+ATTR_HTML: :height 100%
+[[./images/wgb.png]]
 
 * GLAM Wikibase
 - OCLC's [[http://www.projectpassage.org/wiki/Main_Page][Project Passage]] ([[https://www.oclc.org/research/themes/data-science/linkeddata/linked-data-prototype.html][overview]])
