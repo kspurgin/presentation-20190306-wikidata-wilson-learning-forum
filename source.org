@@ -1,7 +1,7 @@
 #+AUTHOR: Kristina M. Spurgin
-#+TITLE: Remapping Problematic LCSH in TRLN Discovery
+#+TITLE: Wikidata as a Linked Data Platform
 #+EMAIL: kspurgin@email.unc.edu
-#+DATE: 2018-11-15
+#+DATE: 2019-03-06
 #+REVEAL_TRANS: none
 #+REVEAL_THEME: sky
 #+REVEAL_MIN_SCALE: 1
@@ -13,25 +13,10 @@
 #+REVEAL_TITLE_SLIDE_BACKGROUND: ./images/Background1.png
 #+EXPORT_FILE_NAME: index.html
 
-* Introduction (About me)
- - Library Data Strategist, Head of [[https://internal.lib.unc.edu/wikis/staff/index.php/Library_Data_Strategy_%26_Services_(LDSS)][Library Data Strategy & Services]]
- - TRLN Discovery Developer Team
-
-#+BEGIN_NOTES
-My title is Library Data Strategist and I am head of the Library Data Strategy & Services (LDSS) section in Davis Library Tech Services. 
-
-LDSS was created as a service point for our colleagues across the libraries. We help folks solve workflow issues and execute projects by using technology to leverage library data at scale. (If this means nothing to you, follow the LDSS link there when you download the slides to learn more.) By "we," I mainly mean jcm who is the data wizard to the "data magician" folks think I am. :-) 
-
-We also have 3 ongoing routine responsibilities: 
-
- - MARC metadata for monographic and integrating resource online resources. Connie Israel and jcm keep this running smoothly despite challenges you wouldn't believe.
- - non-MARC metadata policy, creation, assessment, remediation, and consultation for the institutional repository, digital collections, and other projects across the Libraries. Anna Goslen and Julia Gootzeit are the powerhouse team on this.
- - And the one that's relevant to this presentation: maintaining the processes that extract our entire catalog (Sierra) and transform it for ingest into our shared online catalog. 
-
-I'm also the data expert on the TRLN Discovery Developer Team. 
-TRLN Discovery is the new shared online catalog we've been building for the past couple of years. 
-Which brings me to the question of...
-#+END_NOTES
+* What we'll cover
+ - Quick intro to Wikidata
+ - Selected GLAM Wikidata activity
+ - Plans at UNC Chapel Hill Libraries
 
 * Introduction (About the shared online catalog)
  - TRLN initiative since 2007
