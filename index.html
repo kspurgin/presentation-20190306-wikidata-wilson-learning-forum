@@ -26,12 +26,12 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide" data-background="./images/Background1.png"><h1 class="title">Wikidata as a Linked Data Platform</h1><h2 class="author">Kristina M. Spurgin</h2><h2 class="date">2019-03-06</h2><p class="date">Created: 2019-03-05 Tue 22:33</p>
+<section id="sec-title-slide" data-background="./images/Background1.png"><h1 class="title">Wikidata as a Linked Data Platform</h1><h2 class="author">Kristina M. Spurgin</h2><h2 class="date">2019-03-06</h2><p class="date">Created: 2019-03-05 Tue 22:37</p>
 </section>
 
 <section>
-<section id="slide-orgbf86c15">
-<h2 id="orgbf86c15">What we'll cover</h2>
+<section id="slide-org4d7a60d">
+<h2 id="org4d7a60d">What we'll cover</h2>
 <ul>
 <li>Quick intro to Wikidata</li>
 <li>Selected GLAM Wikidata activity</li>
@@ -50,8 +50,8 @@ cultural heritage institutions
 </section>
 </section>
 <section>
-<section id="slide-org10caa3d">
-<h2 id="org10caa3d">What is Wikidata?</h2>
+<section id="slide-org8137044">
+<h2 id="org8137044">What is Wikidata?</h2>
 <blockquote nil>
 <p>
 Wikidata is a <b>free and open knowledge base that can be read and edited by both humans and machines</b>.
@@ -70,8 +70,8 @@ Wikidata also provides support to many other sites and services beyond just Wiki
 </section>
 </section>
 <section>
-<section id="slide-org52ac4c0">
-<h2 id="org52ac4c0">What about Wikibase?</h2>
+<section id="slide-org6e08b17">
+<h2 id="org6e08b17">What about Wikibase?</h2>
 <p>
 Wikibase is the software application under Wikidata. 
 </p>
@@ -98,21 +98,77 @@ Wikibase is a collection of applications and libraries for creating, managing an
 </section>
 </section>
 <section>
-<section id="slide-org3197487">
-<h2 id="org3197487">Linked data lightning refresher</h2>
+<section id="slide-org14ac4db">
+<h2 id="org14ac4db">Linked data lightning refresher</h2>
 <p>
 <b>Classic linked data concept: TRIPLES</b>
-Subject -&gt; Predicate -&gt; Object
-owi:<a href="http://classify.oclc.org/classify2/ClassifyDemo?owi=297853">297853</a> -&gt; rdaw:<a href="http://www.rdaregistry.info/Elements/w/#P10256">P10256</a> -&gt; lcsh:<a href="http://id.loc.gov/authorities/subjects/sh2008107935.html">sh2008107935</a>
-Where the wild things are -&gt; has subject -&gt; Monsters&#x2013;Fiction
 </p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Subject</td>
+<td class="org-left">Predicate</td>
+<td class="org-left">Object</td>
+</tr>
+
+<tr>
+<td class="org-left">owi:<a href="http://classify.oclc.org/classify2/ClassifyDemo?owi=297853">297853</a></td>
+<td class="org-left">rdaw:<a href="http://www.rdaregistry.info/Elements/w/#P10256">P10256</a></td>
+<td class="org-left">lcsh:<a href="http://id.loc.gov/authorities/subjects/sh2008107935.html">sh2008107935</a></td>
+</tr>
+
+<tr>
+<td class="org-left">Where the wild things are</td>
+<td class="org-left">has subject</td>
+<td class="org-left">Monsters&#x2013;Fiction</td>
+</tr>
+</tbody>
+</table>
 
 <p>
 <b>The Wikidata version: CLAIMS</b>
-Item -&gt; Property -&gt; Value
-<a href="https://www.wikidata.org/wiki/Q13912">Q13912</a> -&gt; <a href="https://www.wikidata.org/wiki/Property:P921">P921</a> -&gt; <a href="https://www.wikidata.org/wiki/Q276453">Q276453</a>
-Where the wild things are -&gt; main subject -&gt; monster
 </p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Item</td>
+<td class="org-left">Property</td>
+<td class="org-left">Value</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.wikidata.org/wiki/Q13912">Q13912</a></td>
+<td class="org-left"><a href="https://www.wikidata.org/wiki/Property:P921">P921</a></td>
+<td class="org-left"><a href="https://www.wikidata.org/wiki/Q276453">Q276453</a></td>
+</tr>
+
+<tr>
+<td class="org-left">Where the wild things are</td>
+<td class="org-left">main subject</td>
+<td class="org-left">monster</td>
+</tr>
+</tbody>
+</table>
 
 <aside class="notes">
 <p>
@@ -126,10 +182,10 @@ lcsh: library of congress subject heading
 </section>
 </section>
 <section>
-<section id="slide-org59b1c54">
-<h2 id="org59b1c54">Label</h2>
+<section id="slide-orge2a4ad5">
+<h2 id="orge2a4ad5">Label</h2>
 
-<div id="orgbfea7ab" class="figure">
+<div id="org77aec7e" class="figure">
 <p><img src="./images/label.png" alt="label.png" height="100%" />
 </p>
 </div>
@@ -138,8 +194,8 @@ lcsh: library of congress subject heading
 </section>
 </section>
 <section>
-<section id="slide-orgaecb39f">
-<h2 id="orgaecb39f">Query Service (SPARQL)</h2>
+<section id="slide-org41d0d5b">
+<h2 id="org41d0d5b">Query Service (SPARQL)</h2>
 <p>
 <a href="https://query.wikidata.org/">https://query.wikidata.org/</a>
 </p>
@@ -158,8 +214,8 @@ Check out the examples and help!
 </section>
 </section>
 <section>
-<section id="slide-orga2e6d46">
-<h2 id="orga2e6d46">GLAM Wikibase</h2>
+<section id="slide-org6b70607">
+<h2 id="org6b70607">GLAM Wikibase</h2>
 <ul>
 <li>OCLC's <a href="http://www.projectpassage.org/wiki/Main_Page">Project Passage</a> (<a href="https://www.oclc.org/research/themes/data-science/linkeddata/linked-data-prototype.html">overview</a>)</li>
 <li>Europeana's <a href="https://wiki.eagle-network.eu/wiki/Main_Page">EAGLE Project</a></li>
@@ -190,8 +246,8 @@ NCSU is a partner
 </section>
 </section>
 <section>
-<section id="slide-org7519176">
-<h2 id="org7519176">Resources</h2>
+<section id="slide-org5a1f488">
+<h2 id="org5a1f488">Resources</h2>
 <ul>
 <li><a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_educational_resources">Wikidata educational resources</a></li>
 <li><a href="https://www.wikidata.org/wiki/Wikidata:Training">Wikidata training</a></li>
